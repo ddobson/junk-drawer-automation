@@ -1,4 +1,4 @@
-Feature: Login from homepage
+Feature: Authentication
 
 Scenario: User login
   Given I am on the homepage
