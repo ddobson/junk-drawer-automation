@@ -22,13 +22,17 @@ When(/^I enter my (.*) credentials$/) do |user|
   step 'I enter a valid password credential'
 end
 
-When(/^I enter an invalid (.*) credential (.*)$/) do |invalid_type, value|
+When(/^I enter an invalid (.*) sign (.*) credential (.*)$/) do |invalid_type, page, value|
   @unique_user = Time.new.to_i.to_s
-
-  fill_in invalid_type, with: value
 
   credential_types = ['email', 'userName', 'password', 'passwordConf']
   credential_types.delete(invalid_type)
+  if page == 'in'
+    credential_types.delete('userName')
+    credential_types.delete('passwordConf')
+  end
+
+  fill_in invalid_type, with: value
 
   credential_types.each do |credential_type|
     step "I enter a valid #{credential_type} credential"
@@ -77,6 +81,8 @@ Then(/^I should see a (.*) message$/) do |type|
       .to have_content('Usernames may only contain alphanumeric characters')
   when 'length password'
     expect(page).to have_content('Password must be at least 8 characters')
+  when 'unauthorized password'
+    expect(page).to have_content('Unauthorized')
   when 'mismatch passwordConf'
     expect(page).to have_content('Password confirmation must match password')
   else

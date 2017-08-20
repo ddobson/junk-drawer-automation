@@ -26,7 +26,7 @@ Scenario: User sign in
 # Error testing
 Scenario Outline: User sign up with invalid value
   Given I am on the sign up page
-  When I enter an invalid <type> credential <value>
+  When I enter an invalid <type> sign up credential <value>
     And I click to Sign Up
   Then I should see a <error> <type> message
 
@@ -52,3 +52,15 @@ Examples:
 | password     | pass                  | length   |
 | passwordConf |                       | required |
 | passwordConf | mismatch              | mismatch |
+
+Scenario Outline: User sign in with invalid value
+  Given I am on the sign in page
+  When I enter an invalid <type> sign in credential <value>
+    And I click to Sign In
+  Then I should see a <error> <type> message
+
+Examples:
+| type     | value | error        |
+| email    |       | required     |
+| password |       | required     |
+| password | wrong | unauthorized |

@@ -4,6 +4,8 @@ Given(/^I am on the (.*) page$/) do |page|
     visit Capybara.app_host
   when 'sign up'
     visit "#{Capybara.app_host}/signup"
+  when 'sign in'
+    visit "#{Capybara.app_host}/signin"
   end
 end
 
