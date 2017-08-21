@@ -64,7 +64,7 @@ Then('I should be signed out') do
   expect(page).to have_content('Sign In')
 end
 
-Then(/^I should see a (.*) message$/) do |type|
+Then(/^I should see a (.*) message for my auth$/) do |type|
   case type
   when /^required (.*)$/
     expect(page).to have_content('Required')

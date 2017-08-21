@@ -28,7 +28,7 @@ Scenario Outline: User sign up with invalid value
   Given I am on the sign up page
   When I enter an invalid <type> sign up credential <value>
     And I click the Sign Up button
-  Then I should see a <error> <type> message
+  Then I should see a <error> <type> message for my auth
 
 Examples:
 | type         | value                 | error    |
@@ -57,7 +57,7 @@ Scenario Outline: User sign in with invalid value
   Given I am on the sign in page
   When I enter an invalid <type> sign in credential <value>
     And I click the Sign In button
-  Then I should see a <error> <type> message
+  Then I should see a <error> <type> message for my auth
 
 Examples:
 | type     | value | error        |
