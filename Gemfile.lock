@@ -13,6 +13,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
+    clipboard (1.1.1)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -50,6 +51,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 2.15, >= 2.15.1)
+  clipboard (~> 1.1, >= 1.1.1)
   cucumber (~> 2.4)
   dotenv (~> 2.2, >= 2.2.1)
   selenium-webdriver (~> 3.5, >= 3.5.1)
