@@ -5,6 +5,19 @@ Given('I have an account with a link') do
   step 'I click the Create button'
 end
 
+Given('I have an account with two links') do
+  step 'I have an account with a link'
+  step 'I click the New Link button'
+  step 'I enter dog info into the form'
+  step 'I click the Create button'
+end
+
+When('I enter dog info into the form') do
+  fill_in 'destination', with: 'http://imgur.com/gallery/znQXt'
+  fill_in 'title', with: 'cash dog'
+  fill_in 'slashtag', with: 'cash-dog'
+end
+
 When('I enter link info into the form') do
   step 'I enter a valid destination detail'
   step 'I enter a valid title detail'
