@@ -8,7 +8,7 @@ Scenario: User sign up
   Given I am on the home page
   When I click the Sign Up link
     And I enter my new user credentials
-    And I click to Sign Up
+    And I click the Sign Up button
   Then I should be signed in
 
 Scenario: User sign out
@@ -20,14 +20,14 @@ Scenario: User sign in
   Given I have a user account
   When I click the Sign In link
     And I enter my user credentials
-    And I click to Sign In
+    And I click the Sign In button
   Then I should be signed in
 
 # Error testing
 Scenario Outline: User sign up with invalid value
   Given I am on the sign up page
   When I enter an invalid <type> sign up credential <value>
-    And I click to Sign Up
+    And I click the Sign Up button
   Then I should see a <error> <type> message
 
 Examples:
@@ -56,7 +56,7 @@ Examples:
 Scenario Outline: User sign in with invalid value
   Given I am on the sign in page
   When I enter an invalid <type> sign in credential <value>
-    And I click to Sign In
+    And I click the Sign In button
   Then I should see a <error> <type> message
 
 Examples:

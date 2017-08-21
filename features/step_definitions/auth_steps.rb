@@ -2,7 +2,7 @@ Given('I am signed in') do
   step 'I am on the home page'
   step 'I click the Sign Up link'
   step 'I enter my new user credentials'
-  step 'I click to Sign Up'
+  step 'I click the Sign Up button'
 end
 
 Given('I have a user account') do

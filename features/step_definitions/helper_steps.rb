@@ -13,6 +13,6 @@ When(/^I click the (.*) link$/) do |link|
   click_link "#{link}"
 end
 
-When(/^I click to (.*)$/) do |button|
+When(/^I click the (.*) button$/) do |button|
   click_button "#{button}"
 end
